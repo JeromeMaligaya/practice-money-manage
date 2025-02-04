@@ -18,8 +18,8 @@ class TransactionController extends Controller
      */
     public function index()
     {
-        $transactions = Transaction::where('user_id', auth()->id())->get();
-        return view('admin.transactions.index', compact('transactions'));
+        $transactions = Transaction::where('account_id', auth()->id())->get();
+        return view('auth.transactions.index', compact('transactions'));
     }
 
     /**
