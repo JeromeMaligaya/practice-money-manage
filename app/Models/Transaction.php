@@ -18,6 +18,6 @@ class Transaction extends Model
 
     public function category()
     {
-        return $this->belongsTo(Catergory::class);
+        return $this->belongsTo(Category::class);
     }
 }
