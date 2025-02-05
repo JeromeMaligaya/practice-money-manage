@@ -27,7 +27,7 @@ class TransactionController extends Controller
      */
     public function create()
     {
-        //
+        return redirect()->route('transactions.create');
     }
 
     /**
@@ -35,7 +35,9 @@ class TransactionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->validated();
+        $transaction = Transaction::create($data);
+        return redirect()->route('transactions.index')->with('success', 'Transaction correctly created.');
     }
 
     /**
